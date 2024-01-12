@@ -8,6 +8,8 @@
     --color2: #fff;
     --color3:#222222;
     --color4:#f4f4f4;
+    --color5:#808080;
+    --color6:#828bb2;
 }
 body{
     font-family: sans-serif;
@@ -156,6 +158,167 @@ height: 100%;
 .categorie:hover .pop-up{
     transform: translateY(-100%);
 }
+.products-header{
+    text-align: center;
+}
+.products{
+    margin: 5%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 20px;
+}
+.product>h4{
+    margin: 10px 0;
+}
+.p-cancel{
+    text-decoration: line-through;
+    margin: 0 10px;
+    color: var(--color5)
+}
+.product>img{
+    width: 100%;
+}
+.product>.p-links{
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+.p-link{
+    display: flex;
+    align-items: center;  
+    margin: 0 10px;  
+}
+.p-link-item{
+font-size: larger;
+    width: 30px;
+    height: 30px;
+   background-color: var(--color6);
+   color: var(--color2);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 50%;
+}
+.p-link-txt{
+    padding: 0 5px;
+    display: none;  
+}
+.p-link:hover .p-link-item{
+    background: linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
+}
+.p-link:hover .p-link-txt{
+display: block;
+}
+.deal{
+    display: flex;
+}
+.deal1{
+    flex: 1;
+    background-image: url('img/exclusive.jpg');
+    background-position: center;
+    min-height: 120vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--color2);
+    padding: 50px;
+}
+.deal2{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px;
+}
+#demo{
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 10px 30px;
+    background-color: var(--color2);
+    color: var(--color3);
+    text-align: center;
+    font-size: 60px;
+}
+.deal-btn{
+    background: linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
+    padding: 15px 30px;
+    color: var(--color2);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.brands{
+    padding: 5% 30px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: auto;
+}
+.brands>img{
+    cursor: pointer;
+    opacity: 0.4;
+    transition: all 0.2s;
+}
+.brands>img:hover{
+    opacity: 1;
+}
+.weekly-header{
+    text-align: center;
+    padding-top: 5%;
+}
+.weekly{
+    padding: 5%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+.weekly-item{
+    display: flex;
+}
+.weeklyi>h6{
+    transition: all o.2s;
+    cursor: pointer;
+}
+.weeklyi>h6:hover{
+    color: var(--color1);
+}
+.weeklyi{
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.footer{
+    padding: 5%;
+    background-color: var(--color3);
+    color: var(--color2);
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+.news{
+    padding: 7px;
+    display: block;
+}
+.news:focus{
+    outline: none;
+}
+.f-links>i{
+    margin: 0 10px;
+}
+.instafeed{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+.copy{
+    background-color: var(--color3);
+    color: var(--color2);
+    text-align: center;
+    padding: 10px;
+}
 @media screen and (max-width:992px){
     .banner-items{
         margin-top: 20vh;
@@ -163,6 +326,13 @@ height: 100%;
     .features{
         grid-template-columns: repeat(2, 1fr);
     }
+    .products{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer{
+        grid-template-columns: 1fr 1fr;
+    }
+   
 }
 @media screen and (max-width:776px){
     nav>.nav-links{
@@ -195,6 +365,19 @@ height: 100%;
        grid-area: 3/1/4/4; 
        margin: 0 auto;
     }
+    .deal{
+         flex-direction: column;
+    }
+    .brands{ 
+        grid-template-columns: repeat(2,1fr);
+        gap: 30px;
+    }
+    .weekly{
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer{
+        grid-template-columns: 1fr;
+    }
 }
 @media screen and (max-width:600px){
     .features{
@@ -218,5 +401,11 @@ height: 100%;
     }
     .c-5{
        grid-area: 5/1/6/2; 
+    }
+    .products{
+        grid-template-columns:  1fr;
+    }
+    .weekly{
+        grid-template-columns: 1fr;
     }
 }
